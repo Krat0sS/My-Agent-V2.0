@@ -1,0 +1,94 @@
+# 命令白名单配置 — 安全拦截器使用
+# 原则：默认拒绝，显式允许
+
+read_only:
+  - ls
+  - stat
+  - find
+  - du
+  - df
+  - file
+  - cat
+  - head
+  - tail
+  - tree
+  - wc
+  - md5sum
+  - sha256sum
+  - pwd
+  - whoami
+  - which
+  - echo
+  - date
+  - env
+  - printenv
+  - dir
+  - type
+  - where
+  - ver
+  - systeminfo
+  - tasklist
+  - ipconfig
+  - ping
+  - tracert
+  - nslookup
+  - hostname
+  - cls
+  - clear
+
+write:
+  - mv
+  - cp
+  - rsync
+  - mkdir
+  - touch
+  - ln
+  - tar
+  - zip
+  - unzip
+  - diff
+  - tee
+  - start
+  - explorer
+  - open
+  - notepad
+  - code
+  - write
+  - xcopy
+  - robocopy
+  - del
+  - ren
+  - rename
+  - attrib
+  - assoc
+  - ftype
+
+write_requires_confirm:
+  - rm
+  - rmdir
+  - chmod
+  - chown
+  - chgrp
+
+# 危险字符 — 命令参数中不允许出现
+blocked_chars:
+  - ";"
+  - "|"
+  - "&"
+  - "`"
+  - "$("
+  - "${"
+  - "\n"
+  - "\r"
+
+# 允许的路径前缀（check_path 用）
+allowed_path_prefixes:
+  - "~"
+  - "~/Desktop"
+  - "~/Downloads"
+  - "~/Documents"
+  - "~/OneDrive"
+  - "/tmp"
+  - "D:\\"
+  - "E:\\"
+  - "F:\\"
